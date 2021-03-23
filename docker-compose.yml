@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  db:
+    container_name: postgres-db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ysg_user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ysg_db
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin4-ui
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - "5050:80"

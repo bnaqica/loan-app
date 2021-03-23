@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "4751b742-e92a-4b44-a8b4-3c4df28332b2",
+		"name": "LoanApplication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Loan Rates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9999/loan-rate?creditScore=779&vehicleYear=2019",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"loan-rate"
+					],
+					"query": [
+						{
+							"key": "creditScore",
+							"value": "779"
+						},
+						{
+							"key": "vehicleYear",
+							"value": "2019"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Loan Application",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"currentLoanAmount\": 12345.89,\n  \"firstName\": \"John\",\n  \"creditScore\": 780,\n  \"monthlyIncome\": 5000,\n  \"phone\": \"9899998877\",\n  \"postalCode\": \"71742\",\n  \"vehicleMake\": \"VolksWagen\",\n  \"vehicleMileage\": \"14000\",\n  \"vehicleModel\": \"GTI\",\n  \"vehicleYear\": 2015\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9999/loan-application",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"loan-application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Loan Application",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9999/loan-application/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"loan-application",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Loan Application Rates for Applicant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9999/loan-application/rates/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"loan-application",
+						"rates",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Selected Loan Rate for Application",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:9999/loan-application/1/2",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"loan-application",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: loanApplication
+    profiles:
+      active: local
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: public
+
+  datasource:
+    username: ysg_user
+    password: password
+    url: jdbc:postgresql://localhost:5432/ysg_db
+
+  flyway:
+    enabled: true
+    schemas: public
+    locations: classpath:/db/migration
+    user: ysg_user
+    password: password
+
+server:
+  port: 9999
+
+logging:
+  level:
+    com.bnaqica.loanapp: DEBUG
