@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS loan_user;
+DROP TABLE IF EXISTS loan_rate_sheet;

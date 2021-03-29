@@ -25,4 +25,5 @@ public class LoanRateController {
                                                        @Param("vehicleYear") int vehicleYear) {
         return loanRateService.getLoanRates(creditScore, vehicleYear);
     }
+
 }
